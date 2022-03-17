@@ -14,6 +14,8 @@
 #include <netinet/in.h> 
 #include <arpa/inet.h>
 
+#define ANSI_COLOR_GREEN   "\x1b[32m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
 #define MIN_PORT 0
 #define DEFAULT_MAX_PORT 1000
 #define MAX_PORT 65535

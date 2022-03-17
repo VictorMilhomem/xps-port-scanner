@@ -104,7 +104,8 @@ int port_scanner(Target *target, int default_ports){
 
         conn = connect_with_timeout( sockfd, &sa, sizeof sa, 1000);
         if(conn > 0) {
-            printf("[ %d ]  Open\n", i);
+            printf("[ %d ]", i);
+            printf(ANSI_COLOR_GREEN "\tOpen\n" ANSI_COLOR_RESET);
             fflush(stdout);
         }
 
