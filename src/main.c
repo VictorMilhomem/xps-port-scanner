@@ -68,10 +68,6 @@ int main(int argc, char **argv){
             break;
         }
     }
-    
-    // building the target struct for the scanning
-    // target->ip = target_ip; target->max_default_port = max_default_port;
-    // target->max_port = max_port; target->min_port = min_port;
 
     Target target = {target_ip, min_port, max_default_port, max_port};
     

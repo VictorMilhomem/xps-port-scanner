@@ -5,9 +5,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <regex.h>
+#include <fcntl.h>
 #include <sys/socket.h>
+#include <sys/select.h>
+#include <poll.h>
+#include <time.h>
 #include <errno.h>
 #include <netinet/in.h> 
+#include <arpa/inet.h>
 
 #define MIN_PORT 0
 #define DEFAULT_MAX_PORT 1000
