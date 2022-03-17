@@ -74,10 +74,6 @@ int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addr
 int port_scanner(Target *target, int default_ports){
     struct sockaddr_in sa;
     int sockfd, conn, max_port, min_port;
-
-    struct timeval timeout;      
-    timeout.tv_sec = 5;
-    timeout.tv_usec = 0;
     
     strncpy((char*)&sa , "" , sizeof sa);
     sa.sin_family = AF_INET;
@@ -97,7 +93,6 @@ int port_scanner(Target *target, int default_ports){
     for (int i = min_port; i <= max_port; i++){
         sa.sin_port = htons(i);
         sockfd = socket(AF_INET , SOCK_STREAM , 0);
-        fcntl(sockfd, F_SETFL, O_NONBLOCK);
 
         if (sockfd < 0 ){
             perror("\nSocket failure\n");
