@@ -63,7 +63,7 @@ int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addr
 int port_scanner(Target *target, int default_ports){
     struct sockaddr_in sa;
     int sockfd, conn, max_port, min_port;
-    
+
     strncpy((char*)&sa , "" , sizeof sa);
     sa.sin_family = AF_INET;
     sa.sin_addr.s_addr = inet_addr(target->ip);
@@ -93,7 +93,7 @@ int port_scanner(Target *target, int default_ports){
 
         conn = connect_with_timeout( sockfd, &sa, sizeof sa, 1000);
         if(conn > 0) {
-            printf("[ %d ]", i);
+            printf("[*] Port %d", i);
             printf(ANSI_COLOR_GREEN "\tOpen\n" ANSI_COLOR_RESET);
             fflush(stdout);
         }
