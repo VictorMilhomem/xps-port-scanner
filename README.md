@@ -1,6 +1,6 @@
 # Port Scanner
 
-### -Install from source
+### - Install from source
 
 ```
 - First clone this repository
