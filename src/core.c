@@ -68,8 +68,6 @@ int port_scanner(Target *target, int default_ports){
     sa.sin_family = AF_INET;
     sa.sin_addr.s_addr = inet_addr(target->ip);
 
-   // for test we will use the defult maximum port
-
     min_port = target->min_port;
     max_port = target->max_default_port;
     if (default_ports == 0)
@@ -88,8 +86,6 @@ int port_scanner(Target *target, int default_ports){
 			exit(EXIT_FAILURE);
         }
         
-        //Connect using that socket and sockaddr structure
-		//conn = connect(sockfd , (struct sockaddr*)&sa , sizeof sa);
 
         conn = connect_with_timeout( sockfd, &sa, sizeof sa, 1000);
         if(conn > 0) {
