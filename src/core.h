@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <regex.h>
 #include <fcntl.h>
 #include <sys/socket.h>
 #include <sys/select.h>
@@ -13,9 +12,8 @@
 #include <errno.h>
 #include <netinet/in.h> 
 #include <arpa/inet.h>
+#include "utils.h"
 
-#define ANSI_COLOR_GREEN   "\x1b[32m"
-#define ANSI_COLOR_RESET   "\x1b[0m"
 #define MIN_PORT 0
 #define DEFAULT_MAX_PORT 1000
 #define MAX_PORT 65535
@@ -28,7 +26,6 @@ typedef struct {
 } Target;
 
 void help_menu();
-int match(const char *string, const char *pattern);
 int port_scanner(Target *target, int default_ports);
 
 #endif

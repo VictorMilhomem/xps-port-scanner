@@ -6,17 +6,6 @@ void help_menu(){
     exit(EXIT_SUCCESS);
 }
 
-int match(const char *string, const char *pattern)
-{
-    regex_t re;
-    if (regcomp(&re, pattern, REG_EXTENDED|REG_NOSUB) != 0) return 0;
-    int status = regexec(&re, string, 0, NULL, 0);
-    regfree(&re);
-    if (status != 0) return 0;
-    return 1;
-}
-
-
 int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addrlen, unsigned int timeout_ms) {
     int rc = 0;
     // Set O_NONBLOCK
